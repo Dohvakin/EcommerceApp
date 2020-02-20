@@ -1,0 +1,83 @@
+  {% extends 'base.html' %}
+
+{% block navigation %}
+	
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Ecommerce App</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/buyer/products/">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/buyer/cartvalue/">Cart<sup>{{count}}</sup></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout/">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+{% endblock %}
+
+{% block mainblock %}
+	
+	<header class="jumbotron my-4">
+      <h1 class="display-3">Welcome {{user | upper}}!</h1>
+      <h2>Buyer</h2>
+	</header>
+
+  <h1>Cart</h1>
+      <table class="table table-hover">
+        
+        <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Remove</th>
+        </tr>
+
+        {% for i in added_products %}
+        <tr>
+          <form method="post" action="/buyer/cartcalculate/">
+            <td>{{i.product_name}}</td>
+            <td name="price">{{i.product_price}}</td>
+            {% csrf_token %}
+            <td>
+            <input type="number" name="productqty" class="form-control" id="pro">
+            <input type="hidden" name="pid" class="form-control" value="{{i.id}}">
+            <input type="hidden" name="price" class="form-control" value="{{i.product_price}}">
+            </td>
+
+            <td><input type="button" value="Remove" class="btn-primary"></td>
+            
+        </tr>
+        {% endfor %}
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><input type="submit" value="Checkout" class="btn-primary"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+          </form>
+      </table>
+{% endblock %}

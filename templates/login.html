@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<form method="post" class="form-group">
+		{% csrf_token %}
+		<div class="container">
+			<div class="col-md-4">
+				
+			</div>
+			<div class="col-md-4">
+				<h1>Login Page</h1>
+				<label for="username"><b>Username</b></label>
+    			<input type="text" placeholder="Enter Username" name="username" class="form-control" required>
+    			<br>
+    			<label for="password"><b>Password</b></label>
+    			<input type="password" class="form-control" placeholder="Enter Password" name="password" required>
+    			<br>
+    			<a href="/signup/" style="text-decoration: none">Register here !</a><br>
+		    	<button type="submit" class="btn">Login</button>
+			</div>
+    	
+  			<div class="col-md-4">
+				
+			</div>
+  		</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  	<style type="text/css">
+  		.helptext
+  		{
+  			display: none;	
+  		}
+  	</style>
+</head>
+<body>
+
+	<form method="post" class="form-group">
+		{% csrf_token %}
+		<div class="container">
+			<div class="col-md-4">
+				
+			</div>
+			<div class="col-md-4">
+				<h1>Registration form</h1>
+				{{ uform.as_p }}
+				{{ eform.as_p }}
+				<a href="/login/">Login here !</a><br>
+		    	<button type="submit" class="btn">Login</button>
+			</div>
+    	
+  			<div class="col-md-4">
+				
+			</div>
+  		</div>
+	</form>
+</body>
+</html>
