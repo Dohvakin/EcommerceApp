@@ -87,5 +87,5 @@ def cartcalculate(request):
 		count = Cart.objects.filter(user_profile__user_id=request.user).count()
 
 		message = 'Your order is processed of {}'.format(sum)
-		send_mail('Order details', message, 'yashjain516@gmail.com', ['bpl.trainer15@gmail.com'])
+		send_mail('Order details', message, 'XXXXX', ['XXXXXX'])
 		return render(request, 'checkout.html', {'data' : sum, 'count' : count})
