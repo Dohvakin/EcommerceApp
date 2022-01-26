@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'seller', 'buyer', 'EcommerceApp'
+    'seller', 'buyer', 'EcommerceApp',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -81,10 +82,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ecommerce',
-        'USER' : 'root',
-        'PASSWORD' :'yash',
-        'HOST' : 'localhost',
-        'PORT' : 3306
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'db',
+        'PORT': '3306',
     }
 }
 
@@ -134,3 +135,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'yashjain516@gmail.com'
 EMAIL_HOST_PASSWORD = 'YAsh@9691'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
